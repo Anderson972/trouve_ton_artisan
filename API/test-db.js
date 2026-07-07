@@ -11,10 +11,26 @@
   }
 })(); */
 
-const { Artisan, Specialite } = require('./src/models');
+/* const { Artisan, Specialite } = require('./src/models');
 
 (async () => {
   const artisans = await Artisan.findAll({ include: Specialite, limit: 3 });
   console.log(JSON.stringify(artisans, null, 2));
   process.exit();
-})();
+})(); */
+
+
+const {Artisan, Specialite, Categorie} = require ('./src/models')
+
+
+
+getAll = async () => {
+    const artisans = await Artisan.findAll({include: {
+        model: Specialite,
+        include: Categorie
+    }});
+    console.log(JSON.stringify(artisans, null, 2));
+  process.exit();
+};
+
+getAll();
