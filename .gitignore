@@ -23,5 +23,5 @@ yarn-error.log*
 
 
 #test
-test-db
-test
+test-db.js
+test.http
