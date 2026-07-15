@@ -1,7 +1,17 @@
+import {Routes, Route} from 'react-router-dom';
+import Home from './pages/Home.jsx';
+import NotFound from './pages/NotFound.jsx';
+import Header from './components/Header.jsx';
+
 function App() {
+
   return (
-    <div>
-      <h1>Trouve ton artisan</h1>
+    <div className='App' >
+      <Header/>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='*' element={<NotFound />} />
+      </Routes>
     </div>
   );
 }
