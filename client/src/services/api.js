@@ -20,7 +20,7 @@ const fetchDatas = async (endpoint) => {
     }
 };
 
-export const getArtisans = () => fetchDatas('/artisans');
+export const getArtisans = (query='') => fetchDatas(`/artisans${query ? `?${query}` : ''}`);
 export const getTopArtisans = () => fetchDatas('/artisans/top');
 export const getArtisanById = (id) => fetchDatas(`/artisans/${id}`);
 

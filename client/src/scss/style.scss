@@ -1,2 +1,16 @@
 // Import all of Bootstrap’s CSS
 @import "bootstrap/scss/bootstrap";
+
+  .card {
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+.card:hover
+{
+    outline: 3px solid #0074c7; 
+    outline-offset: 2px;
+    background-color: rgba(0, 0, 0, 0.03);
+  }
+.list-group-item {
+    background-color: inherit;
+}
