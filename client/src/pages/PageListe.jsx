@@ -25,7 +25,7 @@ const PageListe = () => {
                     <li key={artisan.id_artisans} className="pb-3 col-12 col-md-6 col-lg-4">
                         <Link className="text-decoration-none hover" to={`/artisans/${artisan.id_artisans}`}>
                             <div className="card text-center">
-                                <img src="/img/Logo.png" className="card-img-top" style={{ width: '18rem' }} alt={`Logo de ${artisan.nom}`}/>
+                                <img src="/img/Logo.png" className="card-img-top" alt={`Logo de ${artisan.nom}`}/>
                                 <div className="card-body">
                                     <h5 className="card-title">{artisan.nom}</h5>
                                     <ul className="list-group list-group-flush">

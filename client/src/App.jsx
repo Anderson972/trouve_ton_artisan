@@ -3,6 +3,7 @@ import Home from './pages/Home.jsx';
 import NotFound from './pages/NotFound.jsx';
 import Header from './components/Header.jsx';
 import PageListe from './pages/PageListe.jsx';
+import FicheArtisan from './pages/FicheArtisan.jsx';
 
 
 
@@ -15,7 +16,7 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='*' element={<NotFound />} />
         <Route path='/artisans' element={<PageListe />} />
-{/*         <Route path='/artisans/:id' element={<Artisan />} /> */}
+        <Route path='/artisans/:id' element={<FicheArtisan />} />
       </Routes>
     </div>
   );

@@ -45,6 +45,6 @@ export const fetchSendContact = async (id_artisan, nom, mail, objet, message) =>
         return true
     } catch (error) {
         console.error(error.message)
-        throw error
+        return false
     }
 };
