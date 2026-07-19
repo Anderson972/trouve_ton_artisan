@@ -3,6 +3,7 @@ import { getTopArtisans } from "../services/api";
 import CardArtisan from "../components/cardArtisan";
 import CardInstruction from "../components/CardInstruction";
 import BackHome from "../components/BackHome";
+import { Helmet } from "react-helmet-async";
 
 
 const Home = () => {
@@ -19,7 +20,12 @@ const Home = () => {
 
 
     return (
+
         <div className="home container min-vh-100 p-4">
+            <Helmet>
+                <title>Trouve ton artisan - Accueil</title>
+                <meta name="description" content="Trouvez facilement un artisan près de chez vous en région Auvergne-Rhône-Alpes." />
+            </Helmet>
             <div className="top p-4">
                 <h2 className="text-center">Top artisans</h2>
                 <div id="carouselTop" className="carousel slide carousel-dark">

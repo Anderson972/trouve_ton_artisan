@@ -3,6 +3,7 @@ import { useParams, Link} from "react-router-dom";
 import { fetchSendContact, getArtisanById } from "../services/api";
 import Star from "../components/StarRate";
 import BackHome from "../components/BackHome";
+import { Helmet } from "react-helmet-async";
 
 
 const FicheArtisan = () => {
@@ -57,6 +58,10 @@ const FicheArtisan = () => {
     };
     return(
         <div className="fiche_artisan vh-100 pt-4 min-vh-100 d-flex justify-content-center container">
+            <Helmet>
+                <title>Trouve ton artisan - {artisan.nom}</title>
+                <meta name="description" content={`Fiche d'information et de contact de ${artisan.nom}`} />
+            </Helmet>
             <div className=" mx-auto container container-lg row border rounded-4 p-3">
                 <h3 className="text-center">{artisan.nom}</h3>
                 <div className="logo col-12 col-md-6 my-auto">
@@ -73,7 +78,7 @@ const FicheArtisan = () => {
                 </div>
                 <hr />
                 <form  onSubmit={submit} className="border rounded-4 p-3">
-                    <h4>Formulaire de contacte</h4>
+                    <h4>Formulaire de contact</h4>
                     <div className="form-floating mb-3">
                         <input value={form.nom} onChange={(e) => setForm({...form, nom: e.target.value})} type="text" className="form-control" id="name_form" placeholder="Votre nom" required/>
                         <label htmlFor="name_form">Nom</label>
