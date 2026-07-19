@@ -26,7 +26,6 @@ const FicheArtisan = () => {
         if (res === true) {
             setForm({ nom: '', mail: '', objet: '', message: '' });
         }
-
     };
 
     const messageStatut = () => {

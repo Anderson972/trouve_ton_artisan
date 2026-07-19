@@ -1,7 +1,7 @@
 // Import all of Bootstrap’s CSS
 @import "bootstrap/scss/bootstrap";
 
-  .card {
+.card {
     transition: transform 0.2s, box-shadow 0.2s;
   }
 
@@ -13,4 +13,67 @@
   }
 .list-group-item {
     background-color: inherit;
+}
+
+.carousel .card,
+.instruction-card {
+  max-width: 23rem;
+  margin-inline: auto;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  &:hover .carousel-control-prev-icon,
+  &:hover .carousel-control-next-icon {
+    transform: scale(1.2);
+  }
+}
+
+.instruction-card .card-title span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  background-color: #0074c7;
+  color: white;
+}
+
+.instruction{
+    position: relative;
+}
+.instruction::before{
+    position: absolute;
+    z-index: -1;
+    top: 2rem;
+    right: 0;
+    bottom: 0;
+    left: -999rem;
+    content: "";
+    background-color: #f1f8fc;
+    border-radius: inherit;
+}
+
+.instruction-title{
+    position: relative;
+    color: white;
+    display: inline-block;
+}
+
+.instruction-title::after{
+    position: absolute;
+    z-index: -1;
+    top: -1rem;
+    right: -1rem;
+    bottom: -1rem;
+    left: -2rem;
+    content: "";
+    background-color: #cd2c2e;
+}
+
+@media (max-width: 992px) {
+    .instruction::before {
+        right: -10rem;
+        left: -999rem;
+    }
 }
