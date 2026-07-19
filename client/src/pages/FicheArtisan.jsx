@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams, Link} from "react-router-dom";
 import { fetchSendContact, getArtisanById } from "../services/api";
 import Star from "../components/StarRate";
+import BackHome from "../components/BackHome";
 
 
 const FicheArtisan = () => {
@@ -55,7 +56,7 @@ const FicheArtisan = () => {
         )
     };
     return(
-        <div className="pt-4 fiche_artisan min-vh-100 d-flex justify-content-center container">
+        <div className="fiche_artisan vh-100 pt-4 min-vh-100 d-flex justify-content-center container">
             <div className=" mx-auto container container-lg row border rounded-4 p-3">
                 <h3 className="text-center">{artisan.nom}</h3>
                 <div className="logo col-12 col-md-6 my-auto">
@@ -93,6 +94,7 @@ const FicheArtisan = () => {
                     {messageStatut()}
                 </form>
             </div>
+            <BackHome />
         </div>
     )
 };

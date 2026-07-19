@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { getTopArtisans } from "../services/api";
 import CardArtisan from "../components/cardArtisan";
 import CardInstruction from "../components/CardInstruction";
+import BackHome from "../components/BackHome";
 
 
 const Home = () => {
@@ -18,9 +19,8 @@ const Home = () => {
 
 
     return (
-        <div className="container">
-            <h1>Trouve ton artisan</h1>
-            <div className="top">
+        <div className="home container min-vh-100 p-4">
+            <div className="top p-4">
                 <h2 className="text-center">Top artisans</h2>
                 <div id="carouselTop" className="carousel slide carousel-dark">
                     <div className="carousel-indicators mb-0">
@@ -55,7 +55,7 @@ const Home = () => {
                     <li className="col-12 col-lg-3 py-2"><CardInstruction etape={"4"} title={"Réponse"} intitule={"Une réponse sera apportez sous 48h."} /></li>
                 </ol>
             </div>
-
+            <BackHome />
         </div>
     )
 };

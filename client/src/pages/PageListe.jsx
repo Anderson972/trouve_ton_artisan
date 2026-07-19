@@ -2,6 +2,7 @@ import { useSearchParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getArtisans } from "../services/api";
 import CardArtisan from "../components/cardArtisan";
+import BackHome from "../components/BackHome";
 
 const PageListe = () => {
 
@@ -19,7 +20,7 @@ const PageListe = () => {
 
     return(
 
-        <div className="liste_artisans p-4">
+        <div className="min-vh-100 liste_artisans p-4">
             <div className="row">
                 {artisans.map((artisan) => (
                     <div key={artisan.id_artisans} className="pb-3 col-12 col-md-6 col-lg-4">
@@ -27,6 +28,7 @@ const PageListe = () => {
                     </div>
                 ))}
             </div>
+            <BackHome />
         </div>
     )
 };
