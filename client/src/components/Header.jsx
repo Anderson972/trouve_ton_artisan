@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import {NavLink, Link, useNavigate} from 'react-router-dom';
 import { getCategories } from '../services/api';
+import TextHolders from './TextHolders';
 
 
 
@@ -10,12 +11,14 @@ const Header = () => {
     
     const [categories,setCategories] = useState([])
     const [recherche, setRecherche] = useState('')
+    const [loading, setLoading] = useState(true)
     
 
     useEffect(() => {
         const charger = async () => {
             const datas = await getCategories()
             setCategories(datas)
+            setLoading(false)
         };
         charger();
     },[]);
@@ -41,10 +44,14 @@ const Header = () => {
                         <span className="navbar-toggler-icon"></span>
                     </button>
                     <div className="collapse navbar-collapse justify-content-between " id='menu'>
-                        <ul className="navbar-nav">
-                            {categories.map((cat) => (
+                        <ul className={`navbar-nav ${loading ? 'w-50':''}`} aria-busy={loading} aria-live="polite">
+                            {loading ? (
+                                <TextHolders index={4} />
+                            ):
+                            categories.map((cat) => (
                                 <li key={cat.id_categories} className="nav-item"><NavLink className={({ isActive }) => isActive ? "nav-link active" : "nav-link"} to={`/artisans?id_categories=${cat.id_categories}`}>{cat.nom_categories}</NavLink></li>
-                            ))}
+                            ))
+                            }
                         </ul>               
                         <form onSubmit={submit} className="d-flex" role="search">
                             <label htmlFor="recherche" className='visually-hidden'>recherche</label>

@@ -59,6 +59,7 @@ $headings-color: #00497c;
 
 .card {
     transition: transform 0.2s, box-shadow 0.2s;
+    max-width: 23rem;
   }
 
 .card:hover

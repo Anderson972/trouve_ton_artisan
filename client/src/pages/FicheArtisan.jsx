@@ -49,10 +49,13 @@ const FicheArtisan = () => {
 
     if(!artisan){
         return (
-            <div className="min-vh-100 d-flex justify-content-center text-center">
-                <div className="spinner-border" role="status">
-                    <span className="visually-hidden">Chargement</span>
+            <div className="p-3 min-vh-100">
+                <div className="text-center">
+                    <div className="spinner-border" role="status">
+                        <span className="visually-hidden">Chargement</span>
+                    </div>
                 </div>
+                <BackHome />
             </div>
         )
     };

@@ -4,16 +4,19 @@ import CardArtisan from "../components/cardArtisan";
 import CardInstruction from "../components/CardInstruction";
 import BackHome from "../components/BackHome";
 import { Helmet } from "react-helmet-async";
+import CardSkeleton from "../components/CardSkeleton";
 
 
 const Home = () => {
 
     const [artisans, setArtisans] = useState([])
+    const [loading, setLoading] = useState(true)
 
     useEffect(() => {
         const charger = async () => {
             const datas = await getTopArtisans()
             setArtisans(datas)
+            setLoading(false)
         };
         charger()
     },[])
@@ -34,12 +37,17 @@ const Home = () => {
                         <button type="button" data-bs-target="#carouselTop" data-bs-slide-to="1" aria-label="Slide 2"></button>
                         <button type="button" data-bs-target="#carouselTop" data-bs-slide-to="2" aria-label="Slide 3"></button>
                     </div>
-                    <div className="carousel-inner">
-                        {artisans.map((artisan, index) => (
+                    <div className={`carousel-inner ${loading ? 'p-5' : ''}`} aria-busy={loading} aria-live="polite">
+                        {
+                        loading ? (
+                            <CardSkeleton />
+                        ): 
+                        artisans.map((artisan, index) => (
                             <div key={artisan.id_artisans} className={`carousel-item ${index === 0 ? 'active' : ''} py-4`}>
                                     <CardArtisan artisan={artisan} />
                             </div>
-                        ))}
+                        ))
+                        }
                     </div>
                     <button className="carousel-control-prev" type="button" data-bs-target="#carouselTop" data-bs-slide="prev">
                         <span className="carousel-control-prev-icon" aria-hidden="true"></span>
