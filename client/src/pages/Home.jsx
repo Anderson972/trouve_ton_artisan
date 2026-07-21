@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { getTopArtisans } from "../services/api";
-import CardArtisan from "../components/cardArtisan";
+import CardArtisan from "../components/CardArtisan";
 import CardInstruction from "../components/CardInstruction";
 import BackHome from "../components/BackHome";
 import { Helmet } from "react-helmet-async";
