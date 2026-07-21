@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import {NavLink, Link, useNavigate} from 'react-router-dom';
+import {Link, useNavigate, useSearchParams} from 'react-router-dom';
 import { getCategories } from '../services/api';
 import TextHolders from './TextHolders';
 
@@ -12,6 +12,10 @@ const Header = () => {
     const [categories,setCategories] = useState([])
     const [recherche, setRecherche] = useState('')
     const [loading, setLoading] = useState(true)
+
+    const [searchParams] = useSearchParams();
+    const categorieActive = searchParams.get('id_categories');
+    
     
 
     useEffect(() => {
@@ -48,9 +52,11 @@ const Header = () => {
                             {loading ? (
                                 <TextHolders index={4} />
                             ):
-                            categories.map((cat) => (
-                                <li key={cat.id_categories} className="nav-item"><NavLink className={({ isActive }) => isActive ? "nav-link active" : "nav-link"} to={`/artisans?id_categories=${cat.id_categories}`}>{cat.nom_categories}</NavLink></li>
-                            ))
+                            categories.map((cat) => {
+                                const estActive = categorieActive === String(cat.id_categories)
+                                return (
+                                <li key={cat.id_categories} className="nav-item"><Link className={estActive ? "nav-link active" : "nav-link"} to={`/artisans?id_categories=${cat.id_categories}`}>{cat.nom_categories}</Link></li>
+                            )})
                             }
                         </ul>               
                         <form onSubmit={submit} className="d-flex" role="search">
