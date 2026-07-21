@@ -1,0 +1,184 @@
+@font-face {
+    font-family: 'Graphik';
+    src: url('/fonts/Graphik-Bold.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Graphik';
+    src: url('/fonts/Graphik-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Graphik';
+    src: url('/fonts/Graphik-BoldItalic.woff2') format('woff2');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Graphik';
+    src: url('/fonts/Graphik-RegularItalic.woff2') format('woff2');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Graphik';
+    src: url('/fonts/Graphik-Semibold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Graphik';
+    src: url('/fonts/Graphik-SemiboldItalic.woff2') format('woff2');
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+}
+
+$font-family-base: 'Graphik', sans-serif;
+$headings-font-weight: 600;
+
+$primary: #0074c7;
+$secondary: #00497c;
+$danger: #cd2c2e;
+$success: #82b864;
+$body-color: #384050;
+$headings-color: #00497c;
+
+
+
+// Import all of Bootstrap’s CSS
+@import "bootstrap/scss/bootstrap";
+
+.card {
+    transition: transform 0.2s, box-shadow 0.2s;
+    max-width: 23rem;
+  }
+
+.card:hover
+{
+    outline: 3px solid $primary; 
+    outline-offset: 2px;
+  }
+.list-group-item {
+    background-color: inherit;
+}
+
+.carousel .card,
+.instruction-card {
+  max-width: 23rem;
+  margin-inline: auto;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  &:hover .carousel-control-prev-icon,
+  &:hover .carousel-control-next-icon {
+    transform: scale(1.2);
+  }
+}
+
+.instruction-card .card-title span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  background-color: $primary;
+  color: white;
+}
+
+.instruction{
+    position: relative;
+}
+.instruction::before{
+    position: absolute;
+    z-index: -1;
+    top: 2rem;
+    right: 0;
+    bottom: 0;
+    left: -999rem;
+    content: "";
+    background-color: #f1f8fc;
+    border-radius: inherit;
+}
+
+.instruction-title{
+    position: relative;
+    color: white;
+    display: inline-block;
+}
+
+.instruction-title::after{
+    position: absolute;
+    z-index: -1;
+    top: -1rem;
+    right: -1rem;
+    bottom: -1rem;
+    left: -2rem;
+    content: "";
+    background-color: $danger;
+}
+
+footer {
+    position: relative;
+    background-color: $primary;
+    padding: 9rem 3rem 1rem 3rem;
+}
+footer::before{
+    position: absolute;
+    top: 0rem;
+    right: 0;
+    left: 0;
+    height: 5rem;
+    content: "";
+    border-radius: 0 0 10rem 10rem;
+    background: #fff;
+}
+footer::after {
+    position: absolute;
+    top: 2.5rem;
+    left: 4rem;
+    width: 0;
+    height: 0;
+    content: "";
+    transform: rotate(90deg);
+    border-right: 3.2rem solid transparent;
+    border-bottom: 4rem solid #fff;
+    border-left: 3.2rem solid transparent;
+}
+
+footer a:hover{
+    opacity: 0.7;
+}
+
+.not-found img {
+    max-width: 900px;
+    width: 100%;
+    height: auto;
+}
+
+
+@media (max-width: 992px) {
+    .instruction::before {
+        right: -10rem;
+        left: -999rem;
+    } 
+}
+
+@media (min-width: 992px){
+    footer::before{
+        right: 3rem;
+        left: 3rem;
+    }
+    footer::after {
+        left: 10rem;
+    }
+}
