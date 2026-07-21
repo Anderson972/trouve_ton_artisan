@@ -60,7 +60,7 @@ const FicheArtisan = () => {
         )
     };
     return(
-        <div className="fiche_artisan vh-100 pt-4 min-vh-100 d-flex justify-content-center container">
+        <div className="fiche_artisan pt-4 min-vh-100 container">
             <Helmet>
                 <title>Trouve ton artisan - {artisan.nom}</title>
                 <meta name="description" content={`Fiche d'information et de contact de ${artisan.nom}`} />
