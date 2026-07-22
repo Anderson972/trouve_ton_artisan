@@ -29,6 +29,7 @@ const PageListe = () => {
                 <title>Trouve ton artisan - Liste d'artisans</title>
                 <meta name="description" content="Liste de tous nos artisans." />
             </Helmet>
+            <h1>Liste Artisans</h1>
             <div className="row" aria-busy={loading} aria-live="polite">
                 {loading ? (
                     <SkeletonList index={6} />

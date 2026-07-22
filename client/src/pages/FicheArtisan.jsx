@@ -65,6 +65,7 @@ const FicheArtisan = () => {
                 <title>Trouve ton artisan - {artisan.nom}</title>
                 <meta name="description" content={`Fiche d'information et de contact de ${artisan.nom}`} />
             </Helmet>
+            <h1>Fiche Artisan</h1>
             <div className=" mx-auto container container-lg row border rounded-4 p-3">
                 <h3 className="text-center">{artisan.nom}</h3>
                 <div className="logo col-12 col-md-6 my-auto">

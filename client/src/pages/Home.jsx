@@ -64,12 +64,11 @@ const Home = () => {
                 <h2 className="instruction-title mb-3">Comment trouver mon artisan ?</h2>
                 <ol className="instruction-list list-unstyled row pt-4">
                     <li className="col-12 col-lg-3 py-2"><CardInstruction etape={"1"} title={"Choix de la catégorie"} intitule={"Choisir la catégorie d’artisanat dans le menu."} /></li>
-                    <li className="col-12 col-lg-3 py-2"><CardInstruction etape={"2"} title={"Choix de l'artisan"} intitule={"Choisir un artisan parmis la liste."} /></li>
+                    <li className="col-12 col-lg-3 py-2"><CardInstruction etape={"2"} title={"Choix de l'artisan"} intitule={"Choisir un artisan dans la liste."} /></li>
                     <li className="col-12 col-lg-3 py-2"><CardInstruction etape={"3"} title={"Contact"} intitule={"Le contacter via le formulaire de contact."} /></li>
                     <li className="col-12 col-lg-3 py-2"><CardInstruction etape={"4"} title={"Réponse"} intitule={"Une réponse sera apportez sous 48h."} /></li>
                 </ol>
             </div>
-            <BackHome />
         </div>
     )
 };
